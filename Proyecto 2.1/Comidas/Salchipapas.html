@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salchipapas</title>
+    <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+    <header>
+        <h1>
+            <img class="logo" src="../img/logo.png" alt="Logotipo de aplicación" />
+            <span class="site-title">fast foot</span>
+        </h1>
+    </header>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="Hamburguesa.html">Hamburguesas</a></li>
+            <li><a href="Perro_Caliente.html">Perros Caliente</a></li>
+            <li><a href="#" class="active">Salchipapas</a></li>
+            <li><a href="Desgranado.html">Desgranado</a></li>
+            <li><a href="Arepa.html">Arepa</a></li>
+            <li><a href="Patacon.html">Patacon</a></li>
+            <li><a href="Sandwich.html">Sandwich</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Bebidas</a>
+                <div class="dropdown-content">
+                    <a href="../Bebidas/Jugos_Agua.html">Jugos en agua</a>
+                    <a href="../Bebidas/Jugos_Leche.html">Jugos en leche</a>
+                    <a href="../Bebidas/Refrescos.html">Refrescos</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="page-content">
+        <!-- Producto 1 -->
+        <div class="product-card">
+            <section>
+                <img
+                    class="product-image"
+                    src="https://vivirenelpoblado.com/wp-content/uploads/2022/02/Salchipapa-Fest-2022-la-busqueda-del-mejor-salchipapas-de-Colombia.jpg"
+                    alt="Salchipapa De 30k"
+                />
+                <h3>Salchichon 30 a 0</h3>
+                <p class="price">$30,000</p>
+                <button type="button" onclick="confirmarAgregarCarrito('Salchichon 30 a 0', 30000)">
+                    Agregar al Carrito
+                </button>
+            </section>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product-card">
+            <section>
+                <img
+                    class="product-image"
+                    src="https://pizzahotexpres.com/wp-content/uploads/2022/06/salvavajada-familiar.jpg"
+                    alt="Salchipapa Familiar"
+                />
+                <h3>Salchichon Familiar</h3>
+                <p class="price">$50,000</p>
+                <button type="button" onclick="confirmarAgregarCarrito('Salchichon Familiar', 50000)">
+                    Agregar al Carrito
+                </button>
+            </section>
+        </div>
+    </main>
+
+    <!-- Carrito -->
+    <div class="cart-container">
+        <button onclick="toggleCartList()">
+            <img src="../img/carro.png" alt="Carrito" /> Carrito (<span>0</span>)
+        </button>
+    </div>
+
+    <!-- Lista de productos en el carrito -->
+    <div id="cart-list-container" style="display: none;">
+        <h3>Productos en el Carrito:</h3>
+        <ul id="cart-list"></ul>
+        <div id="cart-total">Total: $0</div>
+        <button class="close-cart" onclick="toggleCartList()">Cerrar</button>
+        <button onclick="clearCart()">Limpiar Carrito</button>
+        <button onclick="downloadCartPDF()">Descargar PDF</button> <!-- Botón para descargar el PDF -->
+        <button onclick="sendCartToWhatsApp('573044736338')">Enviar a WhatsApp</button> <!-- Botón para enviar a WhatsApp -->
+      </div>
+    <!-- Modal con botón de cerrar -->
+    <div class="background" onclick="toggleModal()"></div>
+    <div class="modal">
+        <button class="close-modal" onclick="toggleModal()">X</button> <!-- Botón de cerrar -->
+        <h3>Detalles de la orden</h3>
+        <div class="modal-content">
+            <div class="form-group">
+                <label>Elige tus salsas:</label>
+                <div>
+                    <input id="Tartara" name="salsas" type="checkbox" value="Tartara" />
+                    <label for="Tartara">Tartara</label>
+                </div>
+                <div>
+                    <input id="Tomate" name="salsas" type="checkbox" value="Tomate" />
+                    <label for="Tomate">Tomate</label>
+                </div>
+                <div>
+                    <input id="Piña" name="salsas" type="checkbox" value="Piña" />
+                    <label for="Piña">Piña</label>
+                </div>
+                <div>
+                    <input id="Rosada" name="salsas" type="checkbox" value="Rosada" />
+                    <label for="Rosada">Rosada</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="vegetales">¿Quieres vegetales?</label>
+                <select id="vegetales" style="font-size: 19px">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="addToCart()">
+                Confirmar
+            </button>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <footer class="piePagina">
+        <button class="social-button whatsapp">WhatsApp</button>
+        <button class="social-button instagram">Instagram</button>
+        <button class="social-button facebook">Facebook</button>
+    </footer>
+    
+</body>
+</html>

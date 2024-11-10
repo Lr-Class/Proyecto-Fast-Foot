@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arepas</title>
+    <link href="../style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>
+            <img class="logo" src="../img/logo.png" alt="Logotipo de aplicación">
+            <span class="site-title">fast foot</span>
+        </h1>
+    </header>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="Hamburguesa.html">Hamburguesas</a></li>
+            <li><a href="Perro_Caliente.html">Perros Caliente</a></li>
+            <li><a href="Salchipapas.html">Salchicpapas</a></li>
+            <li><a href="Desgranado.html">Desgranado</a></li>
+            <li><a href="#" class="active">Arepa</a></li>
+            <li><a href="Patacon.html">Patacon</a></li>
+            <li><a href="Sandwich.html">Sandwich</a></li>
+            <li class="dropdown">
+                <a class="dropbtn" href="#">Bebidas</a>
+                <div class="dropdown-content">
+                    <a href="../Bebidas/Jugos_Agua.html">Jugos en agua</a>
+                    <a href="../Bebidas/Jugos_Leche.html">Jugos en leche</a>
+                    <a href="../Bebidas/Refrescos.html">Refrescos</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="page-content">
+        <div class="product-card">
+            <section>
+                <img class="product-image" src="https://img.freepik.com/fotos-premium/arepas-acolchadas-cargadas-cheddar-o-carne_1309753-20086.jpg?w=740" alt="Burgerepa" />
+                <h3>Burgerepa</h3>
+                <p class="price">$8,000</p>
+                <button type="button" onclick="confirmarAgregarCarrito('Burgerepa', 8000)">Agregar al Carrito</button>
+            </section>
+        </div>
+
+        <div class="product-card">
+            <section>
+                <img class="product-image" src="https://img.freepik.com/fotos-premium/arepas-carne-res-platano-delicioso-delicioso-arepas-fotografia-imagenes-comida_1295756-93782.jpg?w=740" alt="Arepa de maíz con relleno de carne" />
+                <h3>Arepa de maíz con relleno de carne</h3>
+                <p class="price">$12,000</p>
+                <button type="button" onclick="confirmarAgregarCarrito('Arepa de maíz con relleno de carne', 12000)">Agregar al Carrito</button>
+            </section>
+        </div>
+
+        <div class="product-card">
+            <section>
+                <img class="product-image" src="https://img.freepik.com/fotos-premium/arepa-bordes-crujientes-relleno-suave-deliciosa-arepa-fotografia-imagenes-comida-tradicional_1295756-194324.jpg?w=740" alt="Arepa de masa de queso con pollo" />
+                <h3>Arepa de masa de queso con pollo</h3>
+                <p class="price">$12,000</p>
+                <button type="button" onclick="confirmarAgregarCarrito('Arepa de masa de queso con pollo', 12000)">Agregar al Carrito</button>
+            </section>
+        </div>
+
+        <div class="product-card">
+            <section>
+                <img class="product-image" src="https://img.freepik.com/fotos-premium/arreglo-arepas-deliciosas-alto-angulo_23-2148716289.jpg?w=360" alt="Arepa e huevo" />
+                <h3>Arepa e huevo</h3>
+                <p class="price">$50,000</p>
+                <button type="button" onclick="confirmarAgregarCarrito('Arepa e huevo', 50000)">Agregar al Carrito</button>
+            </section>
+        </div>
+
+        <div class="product-card">
+            <section>
+                <img class="product-image" src="https://img.freepik.com/fotos-premium/gorditas-lima-coco-frescas-gorditas-deliciosas-comida-mexicana_1295756-29538.jpg?w=740" alt="Gorditas bañadas en salsa de coco" />
+                <h3>Gorditas bañadas en salsa de coco</h3>
+                <p class="price">$17,000</p>
+                <button type="button" onclick="confirmarAgregarCarrito('Gorditas bañadas en salsa de coco', 17000)">Agregar al Carrito</button>
+            </section>
+        </div>
+    </main>
+
+    <div class="cart-container">
+        <button onclick="toggleCartList()"> <img src="../img/carro.png" alt="Carrito">Carrito (<span id="cart-count">0</span>)</button>
+    </div>
+
+    <div id="cart-list-container" style="display: none;">
+      <h3>Productos en el Carrito:</h3>
+      <ul id="cart-list"></ul>
+      <div id="cart-total">Total: $0</div>
+      <button class="close-cart" onclick="toggleCartList()">Cerrar</button>
+      <button onclick="clearCart()">Limpiar Carrito</button>
+      <button onclick="downloadCartPDF()">Descargar PDF</button> <!-- Botón para descargar el PDF -->
+      <button onclick="sendCartToWhatsApp('573044736338')">Enviar a WhatsApp</button> <!-- Botón para enviar a WhatsApp -->
+    </div>
+    
+    <div class="background" onclick="toggleModal()"></div>
+
+    <!-- Modal con botón de cerrar -->
+    <div class="modal">
+        <button class="close-modal" onclick="toggleModal()">X</button> <!-- Botón de cerrar -->
+        <h3>Detalles de la orden</h3>
+        <div class="modal-content">
+            <div class="form-group">
+                <label>Elige tus salsas:</label>
+                <div>
+                    <input id="Extra queso" name="salsas" type="checkbox" value="Extra queso" />
+                    <label for="Extra queso">Extra queso</label>
+                </div>
+                <div>
+                    <input id="Mantequilla" name="salsas" type="checkbox" value="Mantequilla" />
+                    <label for="Mantequilla">Mantequilla</label>
+                </div>
+                <div>
+                    <input id="Suero" name="salsas" type="checkbox" value="Suero" />
+                    <label for="Suero">Suero</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="vegetales">¿Quieres vegetales?</label>
+                <select id="vegetales" style="font-size: 19px">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="addToCart()">
+                Confirmar
+            </button>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> <!-- Cargar la librería jsPDF -->
+    
+    <footer class="piePagina">
+        <button class="social-button whatsapp">WhatsApp</button>
+        <button class="social-button instagram">Instagram</button>
+        <button class="social-button facebook">Facebook</button>
+    </footer>
+    
+</body>
+</html>

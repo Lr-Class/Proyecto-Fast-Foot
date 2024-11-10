@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugos en Agua</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>
+            <img class="logo" src="../img/logo.png" alt="Logotipo de aplicación">
+            <span class="site-title">fast foot</span>
+        </h1>
+    </header>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../Comidas/Hamburguesa.html">Hamburguesas</a></li>
+            <li><a href="../Comidas/Perro_Caliente.html">Perros Caliente</a></li>
+            <li><a href="../Comidas/Salchipapas.html">Salchicpapas</a></li>
+            <li><a href="../Comidas/Desgranado.html">Desgranado</a></li>
+            <li><a href="../Comidas/Arepa.html">Arepa</a></li>
+            <li><a href="../Comidas/Patacon.html">Patacon</a></li>
+            <li><a href="../Comidas/Sandwich.html">Sandwich</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Bebidas</a>
+                <div class="dropdown-content">
+                    <a href="#">Jugos en agua</a>
+                    <a href="Jugos_Leche.html">Jugos en leche</a>
+                    <a href="Refrescos.html">Refrescos</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="page-content">
+        <div class="product-card">
+            <img
+              class="product-image"
+              src="https://comidaecuatoriana.online/wp-content/uploads/2022/07/receta-de-jugo-de-moras.jpg"
+              alt="Jugos en agua"
+            />
+            <h3>Mora</h3>
+            <p class="price">$7,000</p>
+            <button type="button" onclick="confirmarAgregarCarrito('Mora', 7000)">
+              Agregar al Carrito
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img
+              class="product-image"
+              src="https://comidaecuatoriana.online/wp-content/uploads/2022/07/receta-de-jugo-de-moras.jpg"
+              alt="Jugos en agua"
+            />
+            <h3>Lulo</h3>
+            <p class="price">$7,000</p>
+            <button type="button" onclick="confirmarAgregarCarrito('Lulo', 7000)">
+              Agregar al Carrito
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img
+              class="product-image"
+              src="https://comidaecuatoriana.online/wp-content/uploads/2022/07/receta-de-jugo-de-moras.jpg"
+              alt="Jugos en agua"
+            />
+            <h3>Maracuya</h3>
+            <p class="price">$7,000</p>
+            <button type="button" onclick="confirmarAgregarCarrito('Maracuya', 7000)">
+              Agregar al Carrito
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img
+              class="product-image"
+              src="https://comidaecuatoriana.online/wp-content/uploads/2022/07/receta-de-jugo-de-moras.jpg"
+              alt="Jugos en agua"
+            />
+            <h3>Guayaba</h3>
+            <p class="price">$7,000</p>
+            <button type="button" onclick="confirmarAgregarCarrito('Guayaba', 7000)">
+              Agregar al Carrito
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img
+              class="product-image"
+              src="https://comidaecuatoriana.online/wp-content/uploads/2022/07/receta-de-jugo-de-moras.jpg"
+              alt="Jugos en agua"
+            />
+            <h3>Coco</h3>
+            <p class="price">$7,000</p>
+            <button type="button" onclick="confirmarAgregarCarrito('Coco', 7000)">
+              Agregar al Carrito
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img
+              class="product-image"
+              src="https://comidaecuatoriana.online/wp-content/uploads/2022/07/receta-de-jugo-de-moras.jpg"
+              alt="Jugos en agua"
+            />
+            <h3>Piña</h3>
+            <p class="price">$7,000</p>
+            <button type="button" onclick="confirmarAgregarCarrito('Piña', 7000)">
+              Agregar al Carrito
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img
+              class="product-image"
+              src="https://comidaecuatoriana.online/wp-content/uploads/2022/07/receta-de-jugo-de-moras.jpg"
+              alt="Jugos en agua"
+            />
+            <h3>Corozo</h3>
+            <p class="price">$7,000</p>
+            <button type="button" onclick="confirmarAgregarCarrito('Corozo', 7000)">
+              Agregar al Carrito
+            </button>
+        </div>
+    </main>
+
+    <div class="cart-container">
+        <button onclick="toggleCartList()"> <img src="../img/carro.png" alt="Carrrito">Carrrito (<span>0</span>)</button>
+    </div>
+    <div id="cart-list-container" style="display: none;">
+      <h3>Productos en el Carrito:</h3>
+      <ul id="cart-list"></ul>
+      <div id="cart-total">Total: $0</div>
+      <button class="close-cart" onclick="toggleCartList()">Cerrar</button>
+      <button onclick="clearCart()">Limpiar Carrito</button>
+      <button onclick="downloadCartPDF()">Descargar PDF</button> <!-- Botón para descargar el PDF -->
+      <button onclick="sendCartToWhatsApp('573044736338')">Enviar a WhatsApp</button> <!-- Botón para enviar a WhatsApp -->
+    </div>
+
+    <div class="background" onclick="toggleModal()"></div>
+    <div class="modal">
+      <button class="close-modal" onclick="toggleModal()">X</button> 
+        <h3>Detalles de la orden</h3>
+        <div class="modal-content">
+            <div class="form-group">
+                <label>Elige tu sabor:</label>
+                <div>
+                    <input id="Mora" name="salsas" type="checkbox" value="Mora"/>
+                    <label for="Mora">Mora</label>
+                </div>
+                <div>
+                    <input id="Lulo" name="salsas" type="checkbox" value="Lulo"/>
+                    <label for="Lulo">Lulo</label>
+                </div>
+                <div>
+                    <input id="Maracuya" name="salsas" type="checkbox" value="Maracuya"/>
+                    <label for="Maracuya">Maracuya</label>
+                </div>
+                <div>
+                    <input id="Guayaba" name="salsas" type="checkbox" value="Guayaba"/>
+                    <label for="Guayaba">Guayaba</label>
+                </div>
+                <div>
+                    <input id="Coco" name="salsas" type="checkbox" value="Coco"/>
+                    <label for="Coco">Coco</label>
+                </div>
+                <div>
+                    <input id="Piña" name="salsas" type="checkbox" value="Piña"/>
+                    <label for="Piña">Piña</label>
+                </div>
+                <div>
+                    <input id="Corozo" name="salsas" type="checkbox" value="Corozo"/>
+                    <label for="Corozo">Corozo</label>
+                </div>
+            </div>
+
+            <button type="button" onclick="addToCart()">
+              Confirmar
+          </button>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <footer class="piePagina">
+      <button class="social-button whatsapp">WhatsApp</button>
+      <button class="social-button instagram">Instagram</button>
+      <button class="social-button facebook">Facebook</button>
+  </footer>
+  
+</body>
+</html>
